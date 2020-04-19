@@ -1,58 +1,46 @@
-﻿using System;
+﻿using ChickenBucket.Runtime.Workers;
 using PathCreation;
 using UnityEngine;
 
 namespace ChickenBucket.Runtime
 {
-    public class Wagon : MonoBehaviour
+    public class TrackFollower : MonoBehaviour
     {
 
         [Range(0, 1)]
         public float positionOnPathAtStart;
         public float moveSpeed;
+        public bool rotateAlongPath;
 
         [SerializeField] private PathCreator pathCreator = null;
         [SerializeField] private bool debugLog = false;
 
-        private PlayerInputWorker _inputWorker;
-        private bool _listenToPlayerInput = false;
         private Transform _tr;
         private float _currentDistanceOnTrack;
 
         private void Awake()
         {
             _tr = transform;
+            GoToPositionOnTrack(positionOnPathAtStart);
         }
 
-        public void Init()
+        public void GoToPositionOnTrack(float time)
         {
-            _inputWorker = WorkerManager.Get<PlayerInputWorker>();
-            
             _tr.position = pathCreator.path.GetPointAtTime(positionOnPathAtStart);
             _currentDistanceOnTrack = pathCreator.path.GetClosestDistanceAlongPath(_tr.position);
-            
-            _listenToPlayerInput = true;
+            if (rotateAlongPath)
+                _tr.rotation = pathCreator.path.GetRotationAtDistance(_currentDistanceOnTrack);
         }
 
-        private void Update()
+        public void MoveAlongTrack(float weightedDirection)
         {
-            if (_listenToPlayerInput)
-                ProcessLivePlayerInput();
-        }
-
-        private void ProcessLivePlayerInput()
-        {
-            UpdateTransform();
-        }
-
-        private void UpdateTransform()
-        {
-            float newDist = _currentDistanceOnTrack + Mathf.Clamp(_inputWorker.MoveInput * moveSpeed * Time.deltaTime, -0.999f, 0.999f);
+            float newDist = _currentDistanceOnTrack + Mathf.Clamp(weightedDirection * moveSpeed * Time.deltaTime, -1, 1);
             if (newDist <= pathCreator.path.length && newDist >= 0)
             {
                 _currentDistanceOnTrack = newDist;
                 _tr.position = pathCreator.path.GetPointAtDistance(_currentDistanceOnTrack, EndOfPathInstruction.Stop);
-                _tr.rotation = pathCreator.path.GetRotationAtDistance(_currentDistanceOnTrack, EndOfPathInstruction.Stop);
+                if (rotateAlongPath)
+                    _tr.rotation = pathCreator.path.GetRotationAtDistance(_currentDistanceOnTrack, EndOfPathInstruction.Stop);
                 Print($"Current distance: {_currentDistanceOnTrack}");
             }
         }
@@ -63,7 +51,7 @@ namespace ChickenBucket.Runtime
             Debug.Log($"<color=purple>{message}</color>");
         }
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         private void OnValidate()
         {
             if (pathCreator != null)

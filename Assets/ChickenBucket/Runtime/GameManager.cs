@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ChickenBucket.Runtime.Workers;
+using UnityEngine;
 
 namespace ChickenBucket.Runtime
 {
@@ -19,13 +20,13 @@ namespace ChickenBucket.Runtime
 
         #endregion
     
-        public Wagon wagon;
+        public PlayerController playerChar;
 
         private void Start()
         {
-            WorkerManager.Get<PlayerInputWorker>().EnableActions();
+            WorkerManager.Instance.Get<PlayerInputWorker>().EnableActions();
         
-            wagon.Init();
+            playerChar.Init();
         }
     }
 }

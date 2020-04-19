@@ -8,9 +8,15 @@
         <e p="ChickenBucket" t="Include">
           <e p="Runtime" t="Include">
             <e p="GameManager.cs" t="Include" />
-            <e p="PlayerInputWorker.cs" t="Include" />
-            <e p="Wagon.cs" t="Include" />
+            <e p="PlayerController.cs" t="Include" />
+            <e p="ProjectileLauncher.cs" t="Include" />
+            <e p="TrackFollower.cs" t="Include" />
             <e p="WorkerManager.cs" t="Include" />
+            <e p="Workers" t="Include">
+              <e p="PlayerInputWorker.cs" t="Include" />
+              <e p="Projectile.cs" t="Include" />
+              <e p="SceneWorker.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="PathCreator" t="Include">

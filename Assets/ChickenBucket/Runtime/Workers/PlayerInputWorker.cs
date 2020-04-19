@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace ChickenBucket.Runtime
+namespace ChickenBucket.Runtime.Workers
 {
     public class PlayerInputWorker : MonoBehaviour
     {
-
+        public event System.Action FireButtonClick;
+        
         public float MoveInput
         {
             get
@@ -19,11 +20,13 @@ namespace ChickenBucket.Runtime
         [SerializeField] private InputActionAsset inputActionAsset = null;
 
         private InputAction _moveAction;
+        private InputAction _fireAction;
         private float? _moveInputCache = null;
 
         private void Awake()
         {
             _moveAction = inputActionAsset["Move"];
+            _fireAction = inputActionAsset["Fire"];
         }
 
         private void LateUpdate()
@@ -34,6 +37,8 @@ namespace ChickenBucket.Runtime
         public void EnableActions()
         {
             _moveAction.Enable();
+            _fireAction.Enable();
+            _fireAction.started += _ => FireButtonClick?.Invoke();
         }
     }
 }

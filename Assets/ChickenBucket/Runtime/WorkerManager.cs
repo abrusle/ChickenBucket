@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace ChickenBucket.Runtime
 {
@@ -8,7 +10,7 @@ namespace ChickenBucket.Runtime
         #region Singleton
 
         private static WorkerManager _instance;
-        // public static WorkerManager Instance => _instance;
+        public static WorkerManager Instance => _instance;
 
         private void Awake()
         {
@@ -21,11 +23,19 @@ namespace ChickenBucket.Runtime
 
         #endregion
 
-        public static T Get<T>()
+        private static readonly Dictionary<Type, MonoBehaviour> CachedWorkers = new Dictionary<Type, MonoBehaviour>();
+
+        public T Get<T>() where T : MonoBehaviour
         {
-            var found = _instance.GetComponentInChildren<T>();
-            if (found == null) throw new System.Exception($"Worker of type {nameof(T)} was not found.");
+            Type wType = typeof(T);
+            if (CachedWorkers.ContainsKey(wType))
+                return (T) CachedWorkers[wType];
+            
+            T found = _instance.GetComponentInChildren<T>();
+            if (found == null) throw new Exception($"Worker of type {nameof(T)} was not found.");
+            CachedWorkers.Add(wType, found);
             return found;
+
         }
     }
 }
