@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChickenBucket.Runtime", "ChickenBucket.Runtime.csproj", "{AF896838-EB09-DA6E-9A4B-A2DBCB00891D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathCreator", "PathCreator.csproj", "{7050E3B2-A82E-607C-ACC8-F2DEF30EE8B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathCreatorEditor", "PathCreatorEditor.csproj", "{BEFA0032-EF3F-005F-6C00-1718F9F40AA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF896838-EB09-DA6E-9A4B-A2DBCB00891D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF896838-EB09-DA6E-9A4B-A2DBCB00891D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF896838-EB09-DA6E-9A4B-A2DBCB00891D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF896838-EB09-DA6E-9A4B-A2DBCB00891D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7050E3B2-A82E-607C-ACC8-F2DEF30EE8B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7050E3B2-A82E-607C-ACC8-F2DEF30EE8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7050E3B2-A82E-607C-ACC8-F2DEF30EE8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7050E3B2-A82E-607C-ACC8-F2DEF30EE8B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEFA0032-EF3F-005F-6C00-1718F9F40AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEFA0032-EF3F-005F-6C00-1718F9F40AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEFA0032-EF3F-005F-6C00-1718F9F40AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEFA0032-EF3F-005F-6C00-1718F9F40AA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

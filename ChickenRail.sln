@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathCreator", "PathCreator.csproj", "{142F6565-3A2B-56F6-19A9-02F6327A7492}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChickenBucket.Runtime", "ChickenBucket.Runtime.csproj", "{4C30F6EE-58F1-373A-56E0-A3DB52F4ADA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathCreatorEditor", "PathCreatorEditor.csproj", "{A0DD3B45-0BE6-3D45-7DEB-0D146A014B61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{142F6565-3A2B-56F6-19A9-02F6327A7492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{142F6565-3A2B-56F6-19A9-02F6327A7492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{142F6565-3A2B-56F6-19A9-02F6327A7492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{142F6565-3A2B-56F6-19A9-02F6327A7492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C30F6EE-58F1-373A-56E0-A3DB52F4ADA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C30F6EE-58F1-373A-56E0-A3DB52F4ADA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C30F6EE-58F1-373A-56E0-A3DB52F4ADA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C30F6EE-58F1-373A-56E0-A3DB52F4ADA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0DD3B45-0BE6-3D45-7DEB-0D146A014B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0DD3B45-0BE6-3D45-7DEB-0D146A014B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0DD3B45-0BE6-3D45-7DEB-0D146A014B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0DD3B45-0BE6-3D45-7DEB-0D146A014B61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
