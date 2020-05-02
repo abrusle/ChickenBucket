@@ -10,6 +10,7 @@ namespace ChickenBucket.Runtime.Workers
         public float acceleration = 1;
 
         private Vector3 _dir;
+        
         public void Go(Vector3 direction)
         {
             _dir = direction;

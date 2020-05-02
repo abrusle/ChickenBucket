@@ -61,6 +61,7 @@
      <Compile Include="Assets\ChickenBucket\Runtime\GameManager.cs" />
      <Compile Include="Assets\ChickenBucket\Runtime\PlayerController.cs" />
      <Compile Include="Assets\ChickenBucket\Runtime\ProjectileLauncher.cs" />
+     <Compile Include="Assets\ChickenBucket\Runtime\TrackDisplayCoordinator.cs" />
      <Compile Include="Assets\ChickenBucket\Runtime\TrackFollower.cs" />
      <Compile Include="Assets\ChickenBucket\Runtime\WorkerManager.cs" />
      <Compile Include="Assets\ChickenBucket\Runtime\Workers\PlayerInputWorker.cs" />
