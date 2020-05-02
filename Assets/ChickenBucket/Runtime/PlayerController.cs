@@ -6,16 +6,16 @@ namespace ChickenBucket.Runtime
     [RequireComponent(typeof(TrackFollower))]
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private ProjectileLauncher projectileLauncher = null;
+        
         private PlayerInputWorker _inputWorker = null;
         
         private TrackFollower _trackFollower = null;
-        private ProjectileLauncher _projectileLauncher;
         private bool _listenToPlayerInput = false;
 
         private void Awake()
         {
             _trackFollower = GetComponent<TrackFollower>();
-            _projectileLauncher = GetComponent<ProjectileLauncher>();
         }
 
         public void Init()
@@ -29,14 +29,21 @@ namespace ChickenBucket.Runtime
 
         private void Fire()
         {
-            _projectileLauncher.Launch(transform.position, transform.up);
+            projectileLauncher.Launch();
         }
 
         private void Update()
         {
             if (_listenToPlayerInput)
+            {
                 Move();
-            Debug.DrawRay(transform.position, transform.up, Color.yellow);
+                Aim();
+            }
+        }
+
+        private void Aim()
+        {
+            projectileLauncher.AimTowards(_inputWorker.AimInput.normalized);
         }
 
         private void Move()

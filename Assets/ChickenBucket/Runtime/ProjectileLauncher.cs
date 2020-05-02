@@ -16,13 +16,16 @@ namespace ChickenBucket.Runtime
                 spawnRoot = WorkerManager.Instance.Get<SceneWorker>().WorldOrigin;
         }
 
-        public void Launch(Vector3? origin = null, Vector3? direction = null)
+        public void Launch()
         {
             var projectile = Instantiate(projectilePrefab, spawnRoot, true);
-            if (origin != null)
-                projectile.transform.position = origin.Value;
-            
-            projectile.Go(direction ?? transform.up);
+            projectile.transform.position = transform.position;
+            projectile.Go(transform.up);
+        }
+
+        public void AimTowards(Vector2 direction)
+        {
+            transform.up = direction;
         }
     }
 }

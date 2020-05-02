@@ -10,6 +10,7 @@
             <e p="GameManager.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="ProjectileLauncher.cs" t="Include" />
+            <e p="TrackDisplayCoordinator.cs" t="Include" />
             <e p="TrackFollower.cs" t="Include" />
             <e p="WorkerManager.cs" t="Include" />
             <e p="Workers" t="Include">
